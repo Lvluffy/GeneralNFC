@@ -3,8 +3,8 @@ package com.luffy.generalnfc.base;
 import android.graphics.Color;
 import android.view.View;
 
+import com.luffy.generalandroidlib.android.fragment.BaseLayerFragment;
 import com.luffy.generalnfc.R;
-import com.luffy.uilib.android.fragment.BaseLayerFragment;
 
 import butterknife.ButterKnife;
 
@@ -27,7 +27,7 @@ public abstract class BaseFragment extends BaseLayerFragment {
     }
 
     @Override
-    public int onFragmentBackgroundColor() {
+    public int onFragmentBackgroundResource() {
         return Color.parseColor("#FAFAFA");
     }
 }

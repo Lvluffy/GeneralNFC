@@ -43,11 +43,13 @@ dependencies {
     compile "com.android.support.constraint:constraint-layout:$rootProject.supportConstraintLayout"
     /**自己的库*/
     /*UI*/
-    compile 'com.github.Lvluffy:ui:1.4.1'
+    compile 'com.github.Lvluffy:GeneralAndroid:1.0.5'
+    /*弹框*/
+    compile 'com.github.Lvluffy:GeneralDialog:1.0.7'
     /*工具*/
-    compile 'com.github.Lvluffy:utils:1.3.0'
+    compile 'com.github.Lvluffy:GeneralUtils:1.1.0'
     /*资源*/
-    compile 'com.github.Lvluffy:Resourse:1.0.2'
+    compile 'com.github.Lvluffy:GeneralResourse:1.0.0'
     /**项目*/
     compile project(':nfclib')
     /**第三方的库*/

@@ -3,7 +3,6 @@ package com.luffy.nfclib.invoker;
 import android.content.Intent;
 import android.nfc.Tag;
 
-
 import com.luffy.nfclib.model.IsoDepBean;
 import com.luffy.nfclib.model.MifareClassicBean;
 import com.luffy.nfclib.model.MifareUltralightBean;
@@ -43,9 +42,9 @@ public class ReaderInvoler {
                     .append("Technologies:").append(tag.toString()).append("\n");
             String[] tagTechList = tag.getTechList();
             if (tagTechList != null) {
-                for (int i = 0; i < tagTechList.length; i++) {
-                    stringBuilder.append("*").append(tagTechList[i]).append("*").append("\n");
-                    stringBuilder.append(readTech(tagTechList[i], intent));
+                for (String aTagTechList : tagTechList) {
+                    stringBuilder.append("*").append(aTagTechList).append("*").append("\n");
+                    stringBuilder.append(readTech(aTagTechList, intent));
                 }
             }
             return stringBuilder.toString();
@@ -59,94 +58,94 @@ public class ReaderInvoler {
             /*获取数据*/
             NfcABean mNfcABean = new NfcAReader().reader(intent);
             /*绑定数据*/
-            stringBuilder.append("卡片ID：" + mNfcABean.getCardId() + "\n");
-            stringBuilder.append("超时：" + mNfcABean.getTimeout() + "\n");
-            stringBuilder.append("响应：" + mNfcABean.getAtqa() + "\n");
+            stringBuilder.append("卡片ID：").append(mNfcABean.getCardId()).append("\n");
+            stringBuilder.append("超时：").append(mNfcABean.getTimeout()).append("\n");
+            stringBuilder.append("响应：").append(mNfcABean.getAtqa()).append("\n");
             return stringBuilder.toString();
         } else if (TagTech.TECHS[1].equals(curTagTech)) {
             /*获取数据*/
             NfcBBean mNfcBBean = new NfcBReader().reader(intent);
             /*绑定数据*/
-            stringBuilder.append("卡片ID：" + mNfcBBean.getCardId() + "\n");
-            stringBuilder.append("协议信息：" + mNfcBBean.getProtocolInfo() + "\n");
+            stringBuilder.append("卡片ID：").append(mNfcBBean.getCardId()).append("\n");
+            stringBuilder.append("协议信息：").append(mNfcBBean.getProtocolInfo()).append("\n");
             return stringBuilder.toString();
         } else if (TagTech.TECHS[2].equals(curTagTech)) {
             /*获取数据*/
             NfcFBean mNfcFBean = new NfcFReader().reader(intent);
             /*绑定数据*/
-            stringBuilder.append("卡片ID：" + mNfcFBean.getCardId() + "\n");
-            stringBuilder.append("超时：" + mNfcFBean.getTimeout() + "\n");
-            stringBuilder.append("最大字节数：" + mNfcFBean.getMaxTransceiveLength() + "\n");
-            stringBuilder.append("制造商：" + mNfcFBean.getManufacturer() + "\n");
-            stringBuilder.append("系统代码：" + mNfcFBean.getSystemCode() + "\n");
+            stringBuilder.append("卡片ID：").append(mNfcFBean.getCardId()).append("\n");
+            stringBuilder.append("超时：").append(mNfcFBean.getTimeout()).append("\n");
+            stringBuilder.append("最大字节数：").append(mNfcFBean.getMaxTransceiveLength()).append("\n");
+            stringBuilder.append("制造商：").append(mNfcFBean.getManufacturer()).append("\n");
+            stringBuilder.append("系统代码：").append(mNfcFBean.getSystemCode()).append("\n");
             return stringBuilder.toString();
         } else if (TagTech.TECHS[3].equals(curTagTech)) {
             /*获取数据*/
             NfcVBean mNfcVBean = new NfcVReader().reader(intent);
             /*绑定数据*/
-            stringBuilder.append("卡片ID：" + mNfcVBean.getCardId() + "\n");
-            stringBuilder.append("最大字节数：" + mNfcVBean.getMaxTransceiveLength() + "\n");
-            stringBuilder.append("dsf：" + mNfcVBean.getDsfId() + "\n");
-            stringBuilder.append("响应标记：" + mNfcVBean.getResponseFlags() + "\n");
+            stringBuilder.append("卡片ID：").append(mNfcVBean.getCardId()).append("\n");
+            stringBuilder.append("最大字节数：").append(mNfcVBean.getMaxTransceiveLength()).append("\n");
+            stringBuilder.append("dsf：").append(mNfcVBean.getDsfId()).append("\n");
+            stringBuilder.append("响应标记：").append(mNfcVBean.getResponseFlags()).append("\n");
             return stringBuilder.toString();
         } else if (TagTech.TECHS[4].equals(curTagTech)) {
             /*获取数据*/
             IsoDepBean mIsoDepBean = new IsoDepReader().reader(intent);
             /*绑定数据*/
-            stringBuilder.append("卡片ID：" + mIsoDepBean.getCardId() + "\n");
-            stringBuilder.append("余额：" + mIsoDepBean.getBalance() + "\n");
+            stringBuilder.append("卡片ID：").append(mIsoDepBean.getCardId()).append("\n");
+            stringBuilder.append("余额：").append(mIsoDepBean.getBalance()).append("\n");
             for (String record : mIsoDepBean.getRecord()) {
-                stringBuilder.append("记录：" + record + "\n");
+                stringBuilder.append("记录：").append(record).append("\n");
             }
             return stringBuilder.toString();
         } else if (TagTech.TECHS[5].equals(curTagTech)) {
             /*获取数据*/
             NdefBean mNdefBean = new NdefReader().reader(intent);
             /*绑定数据*/
-            stringBuilder.append("卡片ID：" + mNdefBean.getCardId() + "\n");
-            stringBuilder.append("卡片类型：" + mNdefBean.getTagType() + "\n");
-            stringBuilder.append("最大字节：" + mNdefBean.getMaxSize() + "\n");
+            stringBuilder.append("卡片ID：").append(mNdefBean.getCardId()).append("\n");
+            stringBuilder.append("卡片类型：").append(mNdefBean.getTagType()).append("\n");
+            stringBuilder.append("最大字节：").append(mNdefBean.getMaxSize()).append("\n");
             for (String payload : mNdefBean.getPayLoad()) {
-                stringBuilder.append("payload：" + payload + "\n");
+                stringBuilder.append("payload：").append(payload).append("\n");
             }
             return stringBuilder.toString();
         } else if (TagTech.TECHS[6].equals(curTagTech)) {
             /*获取数据*/
             NdefFormatableBean mNdefFormatableBean = new NdefFormatableReader().reader(intent);
             /*绑定数据*/
-            stringBuilder.append("卡片ID：" + mNdefFormatableBean.getCardId() + "\n");
+            stringBuilder.append("卡片ID：").append(mNdefFormatableBean.getCardId()).append("\n");
             for (String payload : mNdefFormatableBean.getPayLoad()) {
-                stringBuilder.append("payload：" + payload + "\n");
+                stringBuilder.append("payload：").append(payload).append("\n");
             }
             return stringBuilder.toString();
         } else if (TagTech.TECHS[7].equals(curTagTech)) {
             /*获取数据*/
             MifareClassicBean mBaseNfcBean = new MifareClassicReader().reader(intent);
             /*绑定数据*/
-            stringBuilder.append("卡片ID：" + mBaseNfcBean.getCardId() + "\n");
-            stringBuilder.append("卡片类型：" + mBaseNfcBean.getTagType() + "\n");
-            stringBuilder.append("扇区数：" + mBaseNfcBean.getSector() + "\n");
-            stringBuilder.append("块数：" + mBaseNfcBean.getBlock() + "\n");
-            stringBuilder.append("存储空间：" + mBaseNfcBean.getSize() + "\n");
+            stringBuilder.append("卡片ID：").append(mBaseNfcBean.getCardId()).append("\n");
+            stringBuilder.append("卡片类型：").append(mBaseNfcBean.getTagType()).append("\n");
+            stringBuilder.append("扇区数：").append(mBaseNfcBean.getSector()).append("\n");
+            stringBuilder.append("块数：").append(mBaseNfcBean.getBlock()).append("\n");
+            stringBuilder.append("存储空间：").append(mBaseNfcBean.getSize()).append("\n");
             for (MifareClassicBean.InfoBean infoBean : mBaseNfcBean.getInfo()) {
                 stringBuilder.append("内容：" + "\n");
-                stringBuilder.append("Sector：" + infoBean.getSectorPosition() + "\n");
-                stringBuilder.append("Block：" + infoBean.getBlockPosition() + "\n");
-                stringBuilder.append("contentHex：" + infoBean.getContentHex() + "\n");
-                stringBuilder.append("contentDecimal：" + infoBean.getContentDecimal() + "\n");
+                stringBuilder.append("Sector：").append(infoBean.getSectorPosition()).append("\n");
+                stringBuilder.append("Block：").append(infoBean.getBlockPosition()).append("\n");
+                stringBuilder.append("contentHex：").append(infoBean.getContentHex()).append("\n");
+                stringBuilder.append("contentDecimal：").append(infoBean.getContentDecimal()).append("\n");
             }
             return stringBuilder.toString();
         } else if (TagTech.TECHS[8].equals(curTagTech)) {
             /*获取数据*/
             MifareUltralightBean mMifareUltralightBean = new MifareUltralightReader().reader(intent);
             /*绑定数据*/
-            stringBuilder.append("卡片ID：" + mMifareUltralightBean.getCardId() + "\n");
-            stringBuilder.append("卡片类型：" + mMifareUltralightBean.getTagType() + "\n");
-            stringBuilder.append("总容量：" + mMifareUltralightBean.getMifareUltralightPageSize() + "\n");
-            stringBuilder.append("page0：" + mMifareUltralightBean.getPage0() + "\n");
-            stringBuilder.append("page4：" + mMifareUltralightBean.getPage4() + "\n");
-            stringBuilder.append("page8：" + mMifareUltralightBean.getPage8() + "\n");
-            stringBuilder.append("page12：" + mMifareUltralightBean.getPage12() + "\n");
+            stringBuilder.append("卡片ID：").append(mMifareUltralightBean.getCardId()).append("\n");
+            stringBuilder.append("卡片类型：").append(mMifareUltralightBean.getTagType()).append("\n");
+            stringBuilder.append("总容量：").append(mMifareUltralightBean.getMifareUltralightPageSize()).append("\n");
+            stringBuilder.append("page0：").append(mMifareUltralightBean.getPage0()).append("\n");
+            stringBuilder.append("page4：").append(mMifareUltralightBean.getPage4()).append("\n");
+            stringBuilder.append("page8：").append(mMifareUltralightBean.getPage8()).append("\n");
+            stringBuilder.append("page12：").append(mMifareUltralightBean.getPage12()).append("\n");
             return stringBuilder.toString();
         }
         return stringBuilder.toString();

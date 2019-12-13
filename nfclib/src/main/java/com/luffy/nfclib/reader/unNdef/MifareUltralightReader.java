@@ -58,8 +58,6 @@ public class MifareUltralightReader extends BaseNfcReader<MifareUltralightBean> 
                     mifareUltralight.close();
                 } catch (IOException e) {
                     e.printStackTrace();
-                } finally {
-
                 }
             }
             /*打印数据*/

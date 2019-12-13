@@ -146,7 +146,7 @@ public class IsoDepReader extends BaseNfcReader<IsoDepBean> {
                 int cash = byteToInt(v, 4);
                 char t = (v[9] == TRANS_CSU || v[9] == TRANS_CSU_CPX) ? '-' : '+';
                 stringBuilder.append(String.format("%02X%02X.%02X.%02X %02X:%02X ", v[16], v[17], v[18], v[19], v[20], v[21], v[22]));
-                stringBuilder.append("   " + t).append(cash / 100.0f);
+                stringBuilder.append("   ").append(t).append(cash / 100.0f);
                 recordsList.add(stringBuilder.toString());
             }
         }

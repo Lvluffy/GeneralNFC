@@ -5,17 +5,18 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
+import android.os.Build;
 import android.provider.Settings;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.widget.TextView;
 
-import com.luffy.dialoglib.toast.ToastBuilder;
+import com.luffy.generaldialoglib.toast.ToastBuilder;
 import com.luffy.generalnfc.R;
 import com.luffy.generalnfc.base.BaseActivity;
+import com.luffy.generalutilslib.utils.AppUtils;
+import com.luffy.generalutilslib.utils.DoubleClickExitUtils;
 import com.luffy.nfclib.invoker.ReaderInvoler;
-import com.luffy.utilslib.utils.AppUtils;
-import com.luffy.utilslib.utils.DoubleClickExitUtils;
 
 import butterknife.BindView;
 
@@ -56,7 +57,9 @@ public class MainActivity extends BaseActivity {
         }
         if (!mNfcAdapter.isEnabled()) {
             new ToastBuilder(mContext).setTitle("设备未开启NFC").show();
-            startActivity(new Intent(Settings.ACTION_NFC_SETTINGS));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                startActivity(new Intent(Settings.ACTION_NFC_SETTINGS));
+            }
         }
     }
 

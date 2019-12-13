@@ -1,4 +1,4 @@
 <resources>
     <!--应用主题-->
-    <style name="AppTheme" parent="@style/BaseLayerTheme"></style>
+    <style name="AppTheme" parent="@style/BaseLayerTheme" />
 </resources>

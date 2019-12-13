@@ -48,13 +48,12 @@ public class NdefReader extends BaseNfcReader<NdefBean> {
                 //Ndef消息数组
                 Parcelable[] ndefMessageArray = intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
                 if (ndefMessageArray != null && ndefMessageArray.length > 0) {
-                    for (int i = 0; i < ndefMessageArray.length; i++) {
+                    for (Parcelable aNdefMessageArray : ndefMessageArray) {
                         //Ndef消息
-                        NdefMessage mNdefMessage = (NdefMessage) ndefMessageArray[i];
+                        NdefMessage mNdefMessage = (NdefMessage) aNdefMessageArray;
                         //Ndef记录数组
                         NdefRecord[] mNdefRecordArray = mNdefMessage.getRecords();
-                        for (int j = 0; j < mNdefRecordArray.length; j++) {
-                            NdefRecord mNdefRecord = mNdefRecordArray[j];
+                        for (NdefRecord mNdefRecord : mNdefRecordArray) {
                             if (mNdefRecord != null) {
                                 payLoadList.add(NfcUtils.bytesToHexString(mNdefRecord.getPayload()));
                             }
