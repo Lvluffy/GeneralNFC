@@ -44,7 +44,7 @@ dependencies {
     implementation rootProject.ext.supportLibs
     /**自己的库*/
     /*UI*/
-    api 'com.github.Lvluffy:GeneralAndroid:1.0.7'
+    implementation 'com.github.Lvluffy:GeneralAndroid:1.1.2'
     /*弹框*/
     implementation 'com.github.Lvluffy:GeneralDialog:1.0.8'
     /*工具*/
