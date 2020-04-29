@@ -3,7 +3,7 @@ package com.luffy.generalnfc.base;
 import android.graphics.Color;
 import android.view.View;
 
-import com.luffy.generalandroidlib.android.fragment.BaseLayerFragment;
+import com.luffy.componentlib.fragment.BaseLayerFragment;
 import com.luffy.generalnfc.R;
 
 import butterknife.ButterKnife;

@@ -2,7 +2,7 @@ package com.luffy.generalnfc.base;
 
 import android.app.Activity;
 
-import com.luffy.generalandroidlib.android.activity.BaseLayerActivity;
+import com.luffy.componentlib.activity.BaseLayerActivity;
 import com.luffy.generalnfc.R;
 
 import butterknife.ButterKnife;

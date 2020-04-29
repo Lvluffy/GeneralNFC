@@ -1,9 +1,9 @@
 package com.luffy.generalnfc.base;
 
-import com.luffy.generalandroidlib.android.application.BaseLayerApplication;
-import com.luffy.generalutilslib.utils.LogUtils;
-import com.luffy.generalutilslib.utils.SharedPreferencesUtils;
-import com.luffy.generalutilslib.utils.SystemUtils;
+import com.luffy.componentlib.application.BaseLayerApplication;
+import com.luffy.generallib.LogUtils;
+import com.luffy.generallib.SharedPreferencesUtils;
+import com.luffy.generallib.SystemUtils;
 
 /**
  * Created by lvlufei on 2019/7/18

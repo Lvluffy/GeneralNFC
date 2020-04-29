@@ -44,11 +44,12 @@ dependencies {
     implementation rootProject.ext.supportLibs
     /**自己的库*/
     /*UI*/
-    implementation 'com.github.Lvluffy:GeneralAndroid:1.1.2'
+    implementation 'com.github.Lvluffy.GeneralAndroid:componentlib:1.1.7'
     /*弹框*/
-    implementation 'com.github.Lvluffy:GeneralDialog:1.0.8'
+    implementation 'com.github.Lvluffy.GeneralDialog:toastlib:1.1.2'
+    implementation 'com.github.Lvluffy.GeneralDialog:dialoglib:1.1.2'
     /*工具*/
-    implementation 'com.github.Lvluffy:GeneralUtils:1.1.1'
+    implementation 'com.github.Lvluffy.GeneralUtils:generallib:1.1.5'
     /*资源*/
     implementation 'com.github.Lvluffy:GeneralResourse:1.0.1'
     /**项目*/

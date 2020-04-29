@@ -11,12 +11,12 @@ import android.view.Gravity;
 import android.view.KeyEvent;
 import android.widget.TextView;
 
-import com.luffy.generaldialoglib.toast.ToastBuilder;
+import com.luffy.generallib.AppUtils;
+import com.luffy.generallib.DoubleClickExitUtils;
 import com.luffy.generalnfc.R;
 import com.luffy.generalnfc.base.BaseActivity;
-import com.luffy.generalutilslib.utils.AppUtils;
-import com.luffy.generalutilslib.utils.DoubleClickExitUtils;
 import com.luffy.nfclib.invoker.ReaderInvoler;
+import com.luffy.toastlib.ToastBuilder;
 
 import butterknife.BindView;
 
@@ -65,6 +65,11 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initPresenter() {
+
+    }
+
+    @Override
+    public void detachViewForPresenter() {
 
     }
 
